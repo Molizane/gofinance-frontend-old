@@ -1,0 +1,1 @@
+{"ast":null,"code":"import styled from 'styled-components';\nexport const Wrapper = styled.main`\n  color: white;\n`;","map":null,"metadata":{},"sourceType":"module"}
