@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nimport * as S from './styles';\n\nvar Main = function Main() {\n  return /*#__PURE__*/_jsx(S.Wrapper, {\n    children: /*#__PURE__*/_jsx(\"h1\", {\n      \"aria-label\": \"Titulo\",\n      children: \"Main\"\n    })\n  });\n};\n\nexport default Main;","map":null,"metadata":{},"sourceType":"module"}
