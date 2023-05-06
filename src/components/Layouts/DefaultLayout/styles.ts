@@ -5,6 +5,7 @@ export const Container = styled.div``;
 export const Header = styled.div`
   height: 100vh;
   width: 6%;
+
   ${({ theme }) => css`
     background: ${theme.colors.white};
   `}
