@@ -30,13 +30,22 @@ export const InputWrapper = styled.div`
 `;
 
 export const Input = styled.input<InputProps>`
-  ${({ theme }) => css`
-    padding: 20px 120px 20px 10px;
+  ${({ theme, isFilter }) => css`
+    ${!isFilter &&
+    css`
+      padding: 20px 120px 20px 10px;
+    `}
+
     border: 1px solid ${theme.colors.lightGray};
     background: ${theme.colors.white};
     border-size: border-box;
     border-radius: 7px;
     height: fit-content;
     marging: 5px 0;
+
+    ${isFilter &&
+    css`
+      padding: 15px 50px 15px 10px;
+    `}
   `}
 `;

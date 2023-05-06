@@ -4,7 +4,7 @@ import { ButtonProps } from ".";
 export const ButtonWrapper = styled.button.attrs({
   "data-testid": "ButtonWrapper",
 })<ButtonProps>`
-  ${({ theme, disabled }) => css`
+  ${({ theme, disabled, isFilter }) => css`
     background-color: ${theme.colors.tomato};
     color: ${theme.colors.white};
 
@@ -12,7 +12,11 @@ export const ButtonWrapper = styled.button.attrs({
     font-weight: bold;
     font-size: 16px;
     line-height: 16px;
-    padding: 15px 110px;
+
+    ${!isFilter &&
+    css`
+      padding: 15px 110px;
+    `}
 
     border-radius: 5px;
     cursor: pointer;
@@ -32,6 +36,11 @@ export const ButtonWrapper = styled.button.attrs({
     css`
       cursor: not-allowed;
       opacity: 0.7;
+    `}
+
+    ${isFilter &&
+    css`
+      padding: 10px 70px;
     `}
   `}
 `;
