@@ -3,7 +3,7 @@
   "short_name": "Next App",
   "icons": [
     {
-      "src": "/img/icon-192.png",
+      "src": "/img/logo.png",
       "type": "image/png",
       "sizes": "192x192"
     },
