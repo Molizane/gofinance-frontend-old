@@ -15,24 +15,27 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
     <S.Container>
       <S.Header>
         <S.Link>
-          <S.Logo src="/img/logo-finance.svg" />
+          <S.Logo
+            src="/img/logo-finance.svg"
+            onClick={() => router.replace("/")}
+          />
         </S.Link>
         <S.Links>
-          <S.Link onClick={() => router.replace("/auth")}>
+          <S.Link onClick={() => router.replace("/categories-receivement")}>
             <RiMoneyDollarCircleLine size={30} />
           </S.Link>
-          <S.Link onClick={() => router.replace("/auth")}>
+          <S.Link onClick={() => router.replace("/categories-debit")}>
             <GrMoney size={30} />
           </S.Link>
-          <S.Link onClick={() => router.replace("/auth")}>
+          <S.Link onClick={() => router.replace("/accounts-receivement")}>
             <MdOutlineAttachMoney size={30} />
           </S.Link>
-          <S.Link onClick={() => router.replace("/auth")}>
+          <S.Link onClick={() => router.replace("/accounts-debit")}>
             <MdMoneyOff size={30} />
           </S.Link>
         </S.Links>
       </S.Header>
-      {children}
+      <S.Body>{children}</S.Body>
     </S.Container>
   );
 };

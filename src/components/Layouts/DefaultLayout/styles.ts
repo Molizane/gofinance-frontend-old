@@ -17,6 +17,10 @@ export const Header = styled.div`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 `;
 
+export const Body = styled.div`
+  height: 100vh;
+  width: 94%;
+`;
 export const Logo = styled.img`
   width: 60px;
 `;
@@ -37,7 +41,7 @@ export const Link = styled.button`
     color: ${theme.colors.black};
   `}
 
-  padding:10px;
+  padding: 10px;
   text-decoration: none;
   font-weight: bold;
   margin-top: 10px;
