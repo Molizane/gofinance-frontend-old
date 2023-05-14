@@ -5,9 +5,13 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import * as S from "./styles";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
+import * as S from "./styles";
+
+export type ListAccountsProps = {
+  openModal: (value: boolean) => void;
+};
 
 function createData(
   id: Number,
@@ -24,11 +28,13 @@ const rows = [createData(1, "Frozen yoghurt", 159, 6.0, 24, 4.0)];
 
 const titles = ["Título", "Descrição", "Categoria", "Valor", "Data", "Excluir"];
 
-export default function ListAccounts() {
+export default function ListAccounts({ openModal }: ListAccountsProps) {
   return (
     <S.Wrapper>
       <S.Button>
-        <Button isFilter>Adicionar</Button>
+        <Button isFilter onClick={() => openModal(true)}>
+          Adicionar
+        </Button>
       </S.Button>
       <S.FiltersAndDataTable>
         <S.Filters>
@@ -63,15 +69,6 @@ export default function ListAccounts() {
               type="text"
               placeholder="Descrição"
               name="description"
-              isFilter
-            ></Input>
-          </S.Filter>
-          <S.Filter>
-            <Input
-              label="Categoria"
-              type="text"
-              placeholder="Categoria"
-              name="category"
               isFilter
             ></Input>
           </S.Filter>

@@ -7,7 +7,12 @@ export default function Login() {
     <S.Container>
       <S.ImgLogin src="/img/logo-finance.svg" />
       <Input name="login" label="Login" placeholder="Digite seu nome" />
-      <Input name="password" label="Senha" placeholder="Digite sua senha" />
+      <Input
+        name="password"
+        type="password"
+        label="Senha"
+        placeholder="Digite sua senha"
+      />
       <Button>Entrar</Button>
     </S.Container>
   );
