@@ -8,7 +8,6 @@ import Paper from "@mui/material/Paper";
 import * as S from "./styles";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
-import { Bold } from "styled-icons/boxicons-regular";
 
 function createData(
   id: Number,

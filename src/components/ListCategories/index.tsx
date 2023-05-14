@@ -5,10 +5,13 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import * as S from "./styles";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
-import { Bold } from "styled-icons/boxicons-regular";
+import * as S from "./styles";
+
+export type ListCategoriesProps = {
+  openModal: (value: boolean) => void;
+};
 
 function createData(id: Number, title: string, description: string) {
   return { id, title, description };
@@ -18,11 +21,13 @@ const rows = [createData(1, "Frozen yoghurt", "Cool!")];
 
 const titles = ["Título", "Descrição", "Excluir"];
 
-export default function ListCategories() {
+export default function ListCategories({ openModal }: ListCategoriesProps) {
   return (
     <S.Wrapper>
       <S.Button>
-        <Button isFilter>Adicionar</Button>
+        <Button isFilter onClick={() => openModal(true)}>
+          Adicionar
+        </Button>
       </S.Button>
       <S.FiltersAndDataTable>
         <S.Filters>

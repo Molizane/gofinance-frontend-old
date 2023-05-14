@@ -13,6 +13,7 @@ export default function Input({
   placeholder,
   type,
   isFilter = false,
+  maxLength,
 }: InputProps) {
   return (
     <S.Wrapper>
@@ -23,6 +24,7 @@ export default function Input({
           name={name}
           type={type}
           isFilter={isFilter}
+          maxLength={maxLength}
         />
       </S.InputWrapper>
     </S.Wrapper>

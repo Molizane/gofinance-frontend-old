@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as S from "./styles";
 
 export type ModalProps = {
   title?: string;
-  children?: string;
+  children?: React.ReactNode;
   isOpen: boolean;
   getValueOpen: (value: boolean) => void;
 };
@@ -14,9 +14,12 @@ export default function Modal({
   isOpen,
   getValueOpen,
 }: ModalProps) {
-  const [isModalOpen, setModalOpen] = useState<boolean>(isOpen);
+  const [isModalOpen, setIsModalOpen] = useState(isOpen);
 
-  getValueOpen(isModalOpen);
+  useEffect(() => {
+    setIsModalOpen(isOpen);
+    getValueOpen(isOpen);
+  }, [isOpen]);
 
   return (
     <>
@@ -24,6 +27,12 @@ export default function Modal({
         <S.Wrapper>
           <S.Header>
             <S.Title>{title}</S.Title>
+            <S.CloseIcon
+              onClick={() => {
+                getValueOpen(false);
+                setIsModalOpen(false);
+              }}
+            />
           </S.Header>
           <S.Content>{children}</S.Content>
         </S.Wrapper>

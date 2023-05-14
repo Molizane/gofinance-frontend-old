@@ -1,7 +1,7 @@
 import DefaultLayout from "@/components/Layouts/DefaultLayout";
 import CategoriesDebitComponent from "@/components/pages/CategoriesDebit";
 
-export default function AccountsDebit() {
+export default function CategoriesDebit() {
   return (
     <DefaultLayout>
       <CategoriesDebitComponent />

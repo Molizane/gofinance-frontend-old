@@ -1,10 +1,28 @@
+import { useState } from "react";
 import ListCategories from "@/components/ListCategories";
+import CategoriesReceivementAdd from "./components/CategoriesReceivementAdd";
 import * as S from "./styles";
 
-const CategoriesReceivementComponent = () => (
-  <S.Wrapper>
-    <ListCategories />
-  </S.Wrapper>
-);
+const CategoriesReceivement = () => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
 
-export default CategoriesReceivementComponent;
+  const openModal = (value: boolean) => {
+    setModalIsOpen(value);
+  };
+
+  return (
+    <>
+      <S.Wrapper>
+        <ListCategories openModal={openModal} />
+      </S.Wrapper>
+      <S.ModalArea>
+        <CategoriesReceivementAdd
+          getValueOpen={openModal}
+          isOpen={modalIsOpen}
+        />
+      </S.ModalArea>
+    </>
+  );
+};
+
+export default CategoriesReceivement;

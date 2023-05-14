@@ -1,10 +1,10 @@
 import ListAccounts from "@/components/ListAccounts";
 import * as S from "./styles";
 
-const AccountsReceivementComponent = () => (
+const AccountsReceivement = () => (
   <S.Wrapper>
     <ListAccounts />
   </S.Wrapper>
 );
 
-export default AccountsReceivementComponent;
+export default AccountsReceivement;
